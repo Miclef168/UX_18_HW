@@ -4,7 +4,7 @@
 }
 .flexContainer div {
     width: 31%;
-    margin: 0 1%;
+    margin: 0 auto;
 }
 .flexContainer img {
     width: 75%;
@@ -19,15 +19,60 @@
     width: 75%;
     margin: 5px auto;
 }
-.skillCopy {
-    flex-direction: row;
-}
 .workGrid {
     display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "gourpetImg nsaImg serenityImg"
+    "gourpetCopy nsaCopy serenityCopy"
+    ;
+}
+.myWorkimg img {
+    width: 75%;
+    margin: 0 1%;
+}
+.myWorkcopy {
+    width: 75%;
+    margin: 0 1%;
+}
+.gourpetImg {
+    grid-area: gourpetImg;
+}
+.nsaImg {
+    grid-area: nsaImg;
+}
+.serenityImg {
+    grid-area: serenityImg;
+}
+.gourpetCopy {
+    grid-area: gourpetCopy;
+}
+.nsaCopy {
+    grid-area: nsaCopy;
+}
+.serenityCopy {
+    grid-area: serenityCopy;
 }
 
-
-
-@media only screen and (max-width: 600){
-
+@media screen and (max-width: 600){
+    .flexContainer {
+        flex-direction: column;
+    }
+    .flexContainer div {
+        width: 98%;
+        margin: 0 1%;
+    }
+    .workGrid {
+        grid-template-rows: 300px 300px 300px 300px 300px 300px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "gourpetImg"
+        "gourpetCopy" 
+        "nsaImg"
+        "nsaCopy" 
+        "serenityImg"
+        "serenityCopy"
+        ;
+    }
 }
